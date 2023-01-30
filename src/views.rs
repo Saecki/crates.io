@@ -123,6 +123,7 @@ pub struct EncodableDependency {
     pub features: Vec<String>,
     pub target: Option<String>,
     pub kind: DependencyKind,
+    pub explicit_name: Option<String>,
     pub downloads: i32,
 }
 
@@ -148,6 +149,7 @@ impl EncodableDependency {
             features: dependency.features,
             target: dependency.target,
             kind: dependency.kind,
+            explicit_name: dependency.explicit_name,
             downloads: downloads.unwrap_or(0),
         }
     }
